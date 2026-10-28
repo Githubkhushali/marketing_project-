@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+*.DS_Store
+*.local
+*.tsbuildinfo
+# Unused source footage and a duplicate of the public Reel preview.
+/IMG_1656.MOV
+/Bitwise reel.mp4
