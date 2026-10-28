@@ -92,10 +92,18 @@ export default function Hero() {
 
             {/* Location strip */}
             <div className="hero-cta mt-12 flex items-center gap-4">
-              <div className="w-8 h-px bg-lime/40" aria-hidden="true" />
-              <p className="text-xs text-offwhite/30 tracking-[0.2em] uppercase font-medium">
-                {profile.location}
-              </p>
+              <img
+                src="/assets/photos/vaidehi-hero.jpg"
+                alt="Vaidehi Teraiya"
+                className="w-24 h-32 shrink-0 rounded-sm border border-white/10 object-cover"
+                style={{ objectPosition: "center 35%" }}
+              />
+              <div>
+                <div className="w-8 h-px bg-lime/40 mb-3" aria-hidden="true" />
+                <p className="text-xs text-offwhite/30 tracking-[0.2em] uppercase font-medium">
+                  {profile.location}
+                </p>
+              </div>
             </div>
           </div>
 

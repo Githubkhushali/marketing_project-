@@ -82,17 +82,17 @@ export default function Contact() {
                 </svg>
               </a>
 
-              {/* CV download — no PDF available, shows honest info */}
-              <span
-                className="btn-dark opacity-40 cursor-not-allowed"
-                title="CV download coming soon"
-                aria-label="CV download not yet available"
+              <a
+                href="/assets/Vaidehi_Teraiya_CV.pdf"
+                download="Vaidehi_Teraiya_CV.pdf"
+                className="btn-dark"
+                aria-label="Download Vaidehi Teraiya's CV"
               >
                 <span>Download CV</span>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M7 2v7M4 7l3 3 3-3M2 11h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </span>
+              </a>
             </div>
           </div>
 
