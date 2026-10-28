@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// SOURCE OF TRUTH: Vaidehi_Teraiya_CV.pdf + supplied reel URLs
+// SOURCE OF TRUTH: Supplied project brief + supplied Reel URLs
 // Every field below is either a direct fact from the CV, a light
 // web-copy rewording of a CV bullet (meaning unchanged), or an
 // explicit [PLACEHOLDER] marking something still needed from her.
