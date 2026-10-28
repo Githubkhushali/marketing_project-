@@ -13,21 +13,26 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="bg-charcoal text-offwhite">
-      <Nav />
-      <main>
-        <Hero />
-        <Work />
-        <DesignGallery />
-        <About />
-        <Expertise />
-        <Experience />
-        <MarketingApproach />
-        <Toolkit />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="relative isolate bg-charcoal text-offwhite">
+      <div className="portrait-backdrop" aria-hidden="true">
+        <img src="/assets/photos/vaidehi-cutout.png" alt="" />
+      </div>
+      <div className="relative z-10">
+        <Nav />
+        <main>
+          <Hero />
+          <Work />
+          <DesignGallery />
+          <About />
+          <Expertise />
+          <Experience />
+          <MarketingApproach />
+          <Toolkit />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

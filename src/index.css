@@ -291,6 +291,41 @@
   animation: fadeIn var(--dur-slow) var(--ease-out-expo) 500ms forwards;
 }
 
+/* Fixed portrait keeps the cutout present behind the dark sections while
+   leaving foreground text and Reel cards untouched. */
+.portrait-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.portrait-backdrop img {
+  position: absolute;
+  right: clamp(-7rem, -7vw, -3rem);
+  bottom: -5vh;
+  width: auto;
+  height: 94vh;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom right;
+  opacity: 0.28;
+  filter: blur(0.8px);
+  -webkit-mask-image: linear-gradient(to right, transparent 2%, #000 24%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 2%, #000 24%, #000 100%);
+}
+@media (max-width: 1023px) {
+  .portrait-backdrop img {
+    right: -7vw;
+    bottom: 10vh;
+    height: 44vh;
+    opacity: 0.17;
+    filter: blur(0.5px);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 34%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 34%, #000 100%);
+  }
+}
+
 /* ─── SCROLL REVEAL ─── */
 .reveal {
   opacity: 0;
