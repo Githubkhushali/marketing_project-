@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" role="img" aria-labelledby="title desc">
+  <title id="title">The Franchise Insider — Community Content cover art</title>
+  <desc id="desc">Designed cover artwork, not Reel footage.</desc>
+  <rect width="450" height="800" fill="#101634"/>
+  <path d="M0 0h450v291L0 408z" fill="#435bff"/>
+  <path d="M37 158h264a26 26 0 0 1 26 26v126a26 26 0 0 1-26 26H176l-60 49v-49H37a26 26 0 0 1-26-26V184a26 26 0 0 1 26-26" fill="#f8f7f3"/>
+  <circle cx="83" cy="247" r="10" fill="#435bff"/><circle cx="150" cy="247" r="10" fill="#435bff"/><circle cx="217" cy="247" r="10" fill="#435bff"/>
+  <path d="M0 475h450v325H0z" fill="#f8f7f3"/>
+  <text x="38" y="106" fill="#d7ff64" font-family="Arial,sans-serif" font-size="14" letter-spacing="4">THE FRANCHISE INSIDER</text>
+  <text x="36" y="576" fill="#171717" font-family="Georgia,serif" font-size="64" font-style="italic">Community</text>
+  <text x="40" y="625" fill="#435bff" font-family="Arial,sans-serif" font-size="16" letter-spacing="5">CONTENT</text>
+  <path d="M40 665h370" stroke="#171717" stroke-width="1" opacity=".2"/>
+  <text x="40" y="720" fill="#171717" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">DESIGNED COVER · NOT FOOTAGE</text>
+</svg>

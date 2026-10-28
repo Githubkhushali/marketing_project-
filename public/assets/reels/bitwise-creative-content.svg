@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" role="img" aria-labelledby="title desc">
+  <title id="title">Bitwise Branding — Creative Content cover art</title>
+  <desc id="desc">Designed cover artwork, not Reel footage.</desc>
+  <rect width="450" height="800" fill="#e4dfff"/>
+  <path d="M0 0h450v345L0 478z" fill="#d7ff64"/>
+  <circle cx="332" cy="229" r="120" fill="#435bff"/>
+  <circle cx="332" cy="229" r="77" fill="none" stroke="#f8f7f3" stroke-width="2"/>
+  <path d="M0 504 450 370v430H0z" fill="#171717"/>
+  <text x="40" y="125" fill="#171717" font-family="Arial,sans-serif" font-size="16" letter-spacing="5">BITWISE BRANDING</text>
+  <text x="38" y="390" fill="#171717" font-family="Georgia,serif" font-size="66" font-style="italic">Make it</text>
+  <text x="38" y="467" fill="#171717" font-family="Georgia,serif" font-size="66">matter.</text>
+  <text x="40" y="626" fill="#f8f7f3" font-family="Arial,sans-serif" font-size="17" letter-spacing="4">CREATIVE CONTENT</text>
+  <path d="M40 653h120" stroke="#d7ff64" stroke-width="4"/>
+  <text x="40" y="724" fill="#f8f7f3" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">DESIGNED COVER · NOT FOOTAGE</text>
+</svg>

@@ -1,13 +1,7 @@
 import { reels, work } from "../data/content";
 import { useReveal } from "../hooks/useReveal";
-import PreviewVideo from "./PreviewVideo";
 
 // ─── Reel Card ─────────────────────────────────────────────────
-const BRAND_GRADIENTS: Record<string, string> = {
-  "Bitwise Branding": "linear-gradient(135deg, #111 0%, #222 60%, #1a1a1a 100%)",
-  "The Franchise Insider": "linear-gradient(135deg, #0a0f2e 0%, #1a237e 60%, #0d1333 100%)",
-};
-
 function ReelCard({ reel, index }: { reel: (typeof reels)[number]; index: number }) {
   const { ref, visible } = useReveal<HTMLAnchorElement>({ threshold: 0.1 });
   return (
@@ -21,39 +15,13 @@ function ReelCard({ reel, index }: { reel: (typeof reels)[number]; index: number
       className={`reel-card block relative aspect-[9/16] anim-fade-up ${visible ? "is-visible" : ""}`}
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      {reel.videoSrc ? (
-        <>
-          <div className="absolute inset-0" style={{ background: BRAND_GRADIENTS[reel.brand] ?? "#1a1a1a" }} aria-hidden="true" />
-          <PreviewVideo
-          src={reel.videoSrc}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        </>
-      ) : (
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ background: BRAND_GRADIENTS[reel.brand] ?? "#1a1a1a" }}
-        >
-          {/* Decorative */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-20 h-20 border rotate-12" style={{ borderColor: reel.accent }} />
-            <div className="absolute bottom-1/4 right-1/4 w-12 h-12 border rounded-full" style={{ borderColor: reel.accent }} />
-          </div>
-          {/* Instagram icon */}
-          <div className="flex flex-col items-center gap-3">
-            <svg
-              className="opacity-30"
-              width="32" height="32" viewBox="0 0 24 24" fill="none"
-              stroke="white" strokeWidth="1"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-            </svg>
-            <p className="text-[9px] text-white/30 uppercase tracking-widest">View on Instagram</p>
-          </div>
-        </div>
-      )}
+      <img
+        src={reel.coverSrc}
+        alt={`Designed cover artwork for ${reel.brand} — ${reel.label}; not Reel footage`}
+        loading="lazy"
+        decoding="async"
+        className="reel-cover absolute inset-0 w-full h-full object-cover"
+      />
 
       <div className="reel-card-overlay" />
 

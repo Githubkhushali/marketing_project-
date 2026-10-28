@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" role="img" aria-labelledby="title desc">
+  <title id="title">The Franchise Insider — Brand Reel cover art</title>
+  <desc id="desc">Designed cover artwork, not Reel footage.</desc>
+  <rect width="450" height="800" fill="#101634"/>
+  <path d="M0 0h450v800H0z" fill="#435bff"/>
+  <path d="M0 552 450 375v425H0z" fill="#101634"/>
+  <path d="M62 135h326v326H62z" fill="none" stroke="#d7ff64" stroke-width="2" transform="rotate(8 225 298)"/>
+  <path d="M94 166h262v262H94z" fill="none" stroke="#f8f7f3" stroke-width="1" opacity=".65" transform="rotate(-7 225 297)"/>
+  <text x="225" y="286" fill="#f8f7f3" text-anchor="middle" font-family="Georgia,serif" font-size="48">The</text>
+  <text x="225" y="348" fill="#d7ff64" text-anchor="middle" font-family="Georgia,serif" font-size="47" font-style="italic">Franchise</text>
+  <text x="225" y="400" fill="#f8f7f3" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" letter-spacing="7">INSIDER</text>
+  <text x="40" y="633" fill="#f8f7f3" font-family="Georgia,serif" font-size="58" font-style="italic">Brand Reel</text>
+  <text x="40" y="720" fill="#d7ff64" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">DESIGNED COVER · NOT FOOTAGE</text>
+</svg>

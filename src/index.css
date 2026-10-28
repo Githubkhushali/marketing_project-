@@ -419,6 +419,11 @@
   transition: transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease;
   will-change: transform;
 }
+.hero-collage .reel-card { position: absolute; }
+.reel-cover { z-index: 0; }
+.reel-card-overlay { z-index: 1; }
+.reel-play-btn,
+.reel-card-content { z-index: 2; }
 .reel-card:hover {
   transform: scale(1.04) translateY(-4px);
   box-shadow: 0 24px 48px rgba(0,0,0,0.5);
@@ -454,7 +459,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.96);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -462,10 +467,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s var(--ease-spring);
 }
-.reel-card:hover .reel-play-btn {
+.reel-card:hover .reel-play-btn,
+.reel-card:focus-visible .reel-play-btn {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }

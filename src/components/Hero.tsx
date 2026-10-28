@@ -1,6 +1,5 @@
 import { hero, profile } from "../data/content";
 import ReelCollage from "./ReelCollage";
-import PreviewVideo from "./PreviewVideo";
 
 export default function Hero() {
   return (
@@ -161,11 +160,6 @@ export default function Hero() {
 // ── Mobile reel strip ─────────────────────────────────────────
 import { reels } from "../data/content";
 
-const BRAND_GRADIENTS: Record<string, string> = {
-  "Bitwise Branding": "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
-  "The Franchise Insider": "linear-gradient(135deg, #0a0f2e 0%, #1a237e 100%)",
-};
-
 function MobileReelStrip() {
   return (
     <>
@@ -177,31 +171,25 @@ function MobileReelStrip() {
           rel="noopener noreferrer"
           aria-label={`Watch ${reel.label} by ${reel.brand} on Instagram`}
           className="reel-card relative shrink-0 w-32 h-52 block"
+          style={{
+            backgroundImage: `url("${reel.coverSrc}")`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
         >
-          {reel.videoSrc ? (
-            <>
-              <div className="absolute inset-0" style={{ background: BRAND_GRADIENTS[reel.brand] ?? "#1a1a1a" }} aria-hidden="true" />
-              <PreviewVideo
-              src={reel.videoSrc}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            </>
-          ) : (
-            <div
-              className="absolute inset-0"
-              style={{ background: BRAND_GRADIENTS[reel.brand] ?? "#1a1a1a" }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  className="font-display font-light text-xl opacity-20"
-                  style={{ color: reel.accent }}
-                >
-                  {reel.brand[0]}
-                </span>
-              </div>
-            </div>
-          )}
+          <img
+            src={reel.coverSrc}
+            alt={`Designed cover artwork for ${reel.brand} — ${reel.label}; not Reel footage`}
+            loading="eager"
+            decoding="async"
+            className="reel-cover absolute inset-0 w-full h-full object-cover"
+          />
           <div className="reel-card-overlay" />
+          <div className="reel-play-btn" aria-hidden="true">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+              <path d="M1 1l10 6-10 6V1z" fill="#171717" />
+            </svg>
+          </div>
           <div className="reel-card-content">
             <div className="w-4 h-0.5 mb-1" style={{ background: reel.accent }} />
             <p className="text-[9px] text-white/50 uppercase tracking-widest leading-none mb-0.5">

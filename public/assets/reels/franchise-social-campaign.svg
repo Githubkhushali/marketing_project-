@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" role="img" aria-labelledby="title desc">
+  <title id="title">The Franchise Insider — Social Campaign cover art</title>
+  <desc id="desc">Designed cover artwork, not Reel footage.</desc>
+  <rect width="450" height="800" fill="#f8f7f3"/>
+  <rect x="24" y="26" width="402" height="748" fill="#101634"/>
+  <path d="M24 75h402v230H24z" fill="#435bff"/>
+  <circle cx="123" cy="182" r="65" fill="#d7ff64"/>
+  <circle cx="123" cy="182" r="36" fill="#101634"/>
+  <path d="M223 140h157M223 169h118M223 198h138" stroke="#f8f7f3" stroke-width="5" opacity=".8"/>
+  <path d="m83 424 106-67 62 80 115-117v211H83z" fill="#ff8068"/>
+  <path d="M83 518h283" stroke="#f8f7f3" stroke-width="2" opacity=".7"/>
+  <text x="51" y="364" fill="#d7ff64" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">THE FRANCHISE INSIDER</text>
+  <text x="48" y="618" fill="#f8f7f3" font-family="Georgia,serif" font-size="53" font-style="italic">Social</text>
+  <text x="48" y="673" fill="#f8f7f3" font-family="Georgia,serif" font-size="53">Campaign</text>
+  <text x="49" y="729" fill="#d7ff64" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">DESIGNED COVER · NOT FOOTAGE</text>
+</svg>

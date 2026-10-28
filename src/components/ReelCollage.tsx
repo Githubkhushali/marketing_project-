@@ -1,32 +1,20 @@
 import { reels } from "../data/content";
-import PreviewVideo from "./PreviewVideo";
-
-// Gradient backgrounds for each card when no video/thumbnail is available
-const BRAND_GRADIENTS: Record<string, string> = {
-  "Bitwise Branding": "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1e1e1e 100%)",
-  "The Franchise Insider": "linear-gradient(135deg, #0a0f2e 0%, #1a237e 50%, #0d1333 100%)",
-};
-
-const BRAND_INITIALS: Record<string, string> = {
-  "Bitwise Branding": "BB",
-  "The Franchise Insider": "TFI",
-};
 
 // Layout config for asymmetric collage — 6 cards
 // top values are percentage offsets within the padded container (starts below nav)
 const CARD_CONFIGS = [
   // Column 1 — tall card
-  { col: 1, colStart: "left-[0%]", width: "w-[28%]", height: "aspect-[9/16]", float: "float-a", delay: "0ms", zIndex: 1, top: "top-[5%]" },
+  { col: 1, colStart: "left-[0%]", width: "clamp(120px, 14vw, 180px)", aspectRatio: "9 / 16", float: "float-a", delay: "0ms", zIndex: 1, top: "top-[5%]" },
   // Column 1 — small card below
-  { col: 1, colStart: "left-[2%]", width: "w-[22%]", height: "aspect-square", float: "float-c", delay: "200ms", zIndex: 2, top: "top-[60%]" },
+  { col: 1, colStart: "left-[2%]", width: "clamp(96px, 11vw, 144px)", aspectRatio: "1 / 1", float: "float-c", delay: "200ms", zIndex: 2, top: "top-[60%]" },
   // Column 2 — medium card, offset up
-  { col: 2, colStart: "left-[24%]", width: "w-[26%]", height: "aspect-[4/5]", float: "float-b", delay: "100ms", zIndex: 1, top: "top-[0%]" },
+  { col: 2, colStart: "left-[24%]", width: "clamp(112px, 13vw, 168px)", aspectRatio: "4 / 5", float: "float-b", delay: "100ms", zIndex: 1, top: "top-[0%]" },
   // Column 2 — taller card
-  { col: 2, colStart: "left-[26%]", width: "w-[24%]", height: "aspect-[9/16]", float: "float-a", delay: "350ms", zIndex: 2, top: "top-[55%]" },
+  { col: 2, colStart: "left-[26%]", width: "clamp(104px, 12vw, 156px)", aspectRatio: "9 / 16", float: "float-a", delay: "350ms", zIndex: 2, top: "top-[55%]" },
   // Column 3 — medium
-  { col: 3, colStart: "left-[52%]", width: "w-[26%]", height: "aspect-[4/5]", float: "float-c", delay: "150ms", zIndex: 1, top: "top-[8%]" },
+  { col: 3, colStart: "left-[52%]", width: "clamp(112px, 13vw, 168px)", aspectRatio: "4 / 5", float: "float-c", delay: "150ms", zIndex: 1, top: "top-[8%]" },
   // Column 3 — small square
-  { col: 3, colStart: "left-[56%]", width: "w-[22%]", height: "aspect-square", float: "float-b", delay: "280ms", zIndex: 2, top: "top-[62%]" },
+  { col: 3, colStart: "left-[56%]", width: "clamp(96px, 11vw, 144px)", aspectRatio: "1 / 1", float: "float-b", delay: "280ms", zIndex: 2, top: "top-[62%]" },
 ];
 
 export default function ReelCollage() {
@@ -37,9 +25,6 @@ export default function ReelCollage() {
     >
       {reels.map((reel, i) => {
         const config = CARD_CONFIGS[i];
-        const hasVideo = Boolean(reel.videoSrc);
-        const gradient = BRAND_GRADIENTS[reel.brand] ?? "linear-gradient(135deg, #1a1a1a, #2d2d2d)";
-        const initials = BRAND_INITIALS[reel.brand] ?? reel.brand[0];
         const accentColor = reel.accent;
 
         return (
@@ -49,67 +34,21 @@ export default function ReelCollage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Watch ${reel.label} by ${reel.brand} on Instagram`}
-            className={`reel-card absolute ${config.colStart} ${config.top} ${config.width} ${config.height} ${config.float}`}
+            className={`reel-card absolute ${config.colStart} ${config.top} ${config.float}`}
             style={{
               animationDelay: config.delay,
               zIndex: config.zIndex,
+              width: config.width,
+              aspectRatio: config.aspectRatio,
             }}
           >
-            {/* Video or styled background */}
-            {hasVideo ? (
-              <>
-                <div className="absolute inset-0" style={{ background: gradient }} aria-hidden="true" />
-                <PreviewVideo
-                src={reel.videoSrc!}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              </>
-            ) : (
-              <div
-                className="absolute inset-0"
-                style={{ background: gradient }}
-                aria-hidden="true"
-              >
-                {/* Geometric decorative pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div
-                    className="absolute top-1/4 left-1/4 w-16 h-16 border rounded-sm rotate-45"
-                    style={{ borderColor: accentColor }}
-                  />
-                  <div
-                    className="absolute bottom-1/3 right-1/4 w-8 h-8 border rounded-full"
-                    style={{ borderColor: accentColor }}
-                  />
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 opacity-20"
-                    style={{ background: `radial-gradient(circle, ${accentColor} 0%, transparent 70%)` }}
-                  />
-                </div>
-
-                {/* Brand initials */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span
-                    className="font-display font-light select-none opacity-20"
-                    style={{
-                      fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
-                      color: accentColor,
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {initials}
-                  </span>
-                </div>
-
-                {/* Instagram icon */}
-                <div className="absolute top-3 right-3 opacity-30">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <circle cx="12" cy="12" r="4"/>
-                    <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
-                  </svg>
-                </div>
-              </div>
-            )}
+            <img
+              src={reel.coverSrc}
+              alt={`Designed cover artwork for ${reel.brand} — ${reel.label}; not Reel footage`}
+              loading="eager"
+              decoding="async"
+              className="reel-cover absolute inset-0 w-full h-full object-cover"
+            />
 
             {/* Always-visible overlay gradient */}
             <div className="reel-card-overlay" />
